@@ -1,0 +1,32 @@
+name: Gerar instalador Windows
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+
+      - name: Instalar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Compilar THE BEST MARKETPLACE PREMIUM
+        run: npm run tauri build
+
+      - name: Salvar instalador EXE
+        uses: actions/upload-artifact@v4
+        with:
+          name: THE-BEST-MARKETPLACE-PREMIUM-Setup
+          path: src-tauri/target/release/bundle/nsis/*.exe
