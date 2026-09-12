@@ -1,0 +1,21 @@
+THE BEST MARKETPLACE PREMIUM - WINDOWS
+
+Este projeto cria um instalador .EXE real para Windows usando Tauri 2.
+
+O programa:
+- abre em janela própria;
+- usa o site oficial https://thebestdigital.com.br;
+- mantém login, Supabase e dados na nuvem;
+- não contém senhas ou chaves privadas;
+- pode ser recompilado pelo GitHub Actions.
+
+COMO GERAR O EXE NO GITHUB
+1. Crie um repositório para o programa ou envie estes arquivos para um repositório separado.
+2. Abra Actions.
+3. Escolha "Gerar instalador Windows".
+4. Clique Run workflow.
+5. Ao terminar, baixe o artefato THE-BEST-MARKETPLACE-PREMIUM-Setup.
+
+IMPORTANTE
+Não coloque service_role, senha ou segredo do Supabase neste projeto.
+O instalador é um cliente desktop conectado ao sistema web oficial.
